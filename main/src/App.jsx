@@ -10,7 +10,7 @@ const ImageGallery = () => {
   }, [page]);
 
   const fetchImages = () => {
-    fetch(`https://picsum.photos/v2/list?page=${page}&limit=10`)
+    fetch(`https://picsum.photos/v2/list?page=${page}&limit=4`)
       .then((response) => response.json())
       .then((data) => {
         setImages((prevImages) => [...prevImages, ...data]);
