@@ -32,12 +32,14 @@ const ImageGallery = () => {
           </div>
         ))}
       </div>
+      <div className="flex justify-center items-center m-auto p-1">
       <button
-        className="flex justify-center items-center ml-96 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         onClick={handleLoadMore}
       >
         Load More
       </button>
+      </div>
     </div>
   );
 };
