@@ -1,10 +1,10 @@
 # Task Web
 
-This repository contains the code for the Task Web application.
+This repository contains the code for the Task.
 
 ## Overview
 
-Task Web is a web application built with React.js that allows users to manage their tasks.
+I have made this responsive as said, and used the api's, used load more pagination, all the things according to document provided.
 
 ## Features
 
