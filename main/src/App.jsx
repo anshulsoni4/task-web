@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
 
 const ImageGallery = () => {
   const [images, setImages] = useState([]);
@@ -10,27 +11,33 @@ const ImageGallery = () => {
 
   const fetchImages = () => {
     fetch(`https://picsum.photos/v2/list?page=${page}&limit=10`)
-      .then(response => response.json())
-      .then(data => {
-        setImages(prevImages => [...prevImages, ...data]);
+      .then((response) => response.json())
+      .then((data) => {
+        setImages((prevImages) => [...prevImages, ...data]);
       })
-      .catch(error => console.error('Error fetching images:', error));
+      .catch((error) => console.error("Error fetching images:", error));
   };
 
   const handleLoadMore = () => {
-    setPage(prevPage => prevPage + 1);
+    setPage((prevPage) => prevPage + 1);
   };
 
   return (
-    <div className="image-gallery">
-      <div className="grid" key={page}>
-        {images.map(image => (
-          <div key={image.id} className="image-item">
-            <img src={image.download_url} alt={image.author} />
+    <div className="image-gallery bg-white dark:bg-gray-900">
+      <Navbar />
+      <div className="grid m-12 p-20" key={page}>
+        {images.map((image) => (
+          <div key={image.id} className="image-item m-4">
+            <img className="rounded-lg" src={image.download_url} alt={image.author} />
           </div>
         ))}
       </div>
-      <button onClick={handleLoadMore}>Load More</button>
+      <button
+        className="flex justify-center items-center ml-96 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        onClick={handleLoadMore}
+      >
+        Load More
+      </button>
     </div>
   );
 };
