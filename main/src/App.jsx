@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import './index.css'
+
 const ImageGallery = () => {
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
@@ -24,8 +23,7 @@ const ImageGallery = () => {
 
   return (
     <div className="image-gallery">
-      <h1>Image Gallery</h1>
-      <div className="grid">
+      <div className="grid" key={page}>
         {images.map(image => (
           <div key={image.id} className="image-item">
             <img src={image.download_url} alt={image.author} />
